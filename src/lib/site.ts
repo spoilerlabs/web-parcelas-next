@@ -75,7 +75,8 @@ export const caracteristicasExtra = [
 ] as const;
 
 // Videos self-hosted servidos desde el VPS (nginx) detrás de Cloudflare (cacheados).
-export const VIDEOS_BASE = 'https://video.parcelas2.raddo.cl';
+// Subdominio de 2do nivel para que lo cubra el Universal SSL de Cloudflare (*.raddo.cl).
+export const VIDEOS_BASE = 'https://videos-parcelas.raddo.cl';
 
 export const panguipulli = {
   titulo: 'Panguipulli, corazón de Los Ríos',
