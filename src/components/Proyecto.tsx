@@ -18,8 +18,8 @@ export default function Proyecto() {
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-bosque-800/80">
             Un proyecto cerrado de solo cuatro lotes de 5.000 m², pensado para que llegues a
-            construir sin trámites pendientes. Electricidad, acceso asfaltado y portón automático
-            ya están listos.
+            construir. Electricidad, agua, acceso a carretera asfaltada y portón automático
+            incluidos en el proyecto.
           </p>
         </Reveal>
 
