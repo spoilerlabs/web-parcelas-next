@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --grain-opacity: 0.04;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  @apply bg-crema text-bosque-950 font-sans antialiased;
+  overflow-x: hidden;
+}
+
+/* Textura de grano sutil sobre el fondo, da profundidad sin saturar */
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Reveal en scroll.
+   El estado oculto solo se aplica cuando JS confirma soporte (html.has-js),
+   así el contenido es visible por defecto para crawlers, lectores y si JS falla. */
+.has-js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.has-js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subrayado decorativo del display */
+.accent-rule {
+  position: relative;
+  display: inline-block;
+}
+.accent-rule::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.15em;
+  width: 100%;
+  height: 0.12em;
+  background: linear-gradient(90deg, #3d7a5d, #39a0bc);
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
