@@ -86,7 +86,9 @@ export const panguipulli = {
   ],
   imagenCiudad: '/images/calle-panguipulli.jpg',
   videoTour: `${VIDEOS_BASE}/panguipulli.mp4`,
+  videoTourPoster: '/images/poster-tour.jpg',
   videoEntrada: `${VIDEOS_BASE}/entrada-camino.mp4`,
+  videoEntradaPoster: '/images/calle-panguipulli.jpg',
   videoYoutube: 'https://www.youtube.com/watch?v=KOOb6IP5s5Q',
 } as const;
 

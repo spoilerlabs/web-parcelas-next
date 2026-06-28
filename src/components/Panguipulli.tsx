@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { panguipulli } from '@/lib/site';
 import { ArrowIcon } from './icons';
 import Reveal from './Reveal';
+import VideoPlayer from './VideoPlayer';
 
 const datos = [
   { valor: '~40.000', label: 'habitantes' },
@@ -60,23 +61,27 @@ export default function Panguipulli() {
             </a>
           </Reveal>
 
-          {/* Video tour del proyecto (self-hosted en el VPS, cacheado por Cloudflare) */}
+          {/* Video tour del proyecto: poster + botón play (igual que el original) */}
           <Reveal delay={120}>
-            <div className="overflow-hidden rounded-3xl border border-crema/15 shadow-2xl shadow-black/40">
-              <video
-                className="aspect-[4/5] w-full object-cover sm:aspect-[3/4]"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster={panguipulli.imagenCiudad}
-              >
-                <source src={panguipulli.videoTour} type="video/mp4" />
-              </video>
-            </div>
+            <VideoPlayer
+              src={panguipulli.videoTour}
+              poster={panguipulli.videoTourPoster}
+              aspect="aspect-[4/5] sm:aspect-[3/4]"
+            />
           </Reveal>
         </div>
+
+        {/* Segundo video: la entrada del camino (a demanda, como en el original) */}
+        <Reveal className="mt-12">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-lago-300">
+            El camino de acceso
+          </p>
+          <VideoPlayer
+            src={panguipulli.videoEntrada}
+            poster={panguipulli.videoEntradaPoster}
+            aspect="aspect-video"
+          />
+        </Reveal>
       </div>
     </section>
   );
