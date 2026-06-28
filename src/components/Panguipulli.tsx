@@ -60,17 +60,20 @@ export default function Panguipulli() {
             </a>
           </Reveal>
 
-          {/* Imagen de la ciudad */}
+          {/* Video tour del proyecto (self-hosted en el VPS, cacheado por Cloudflare) */}
           <Reveal delay={120}>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-crema/15 shadow-2xl shadow-black/40 sm:aspect-[3/4]">
-              <Image
-                src={panguipulli.imagenCiudad}
-                alt="Calle Martínez de Rozas en Panguipulli"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-bosque-950/40 to-transparent" />
+            <div className="overflow-hidden rounded-3xl border border-crema/15 shadow-2xl shadow-black/40">
+              <video
+                className="aspect-[4/5] w-full object-cover sm:aspect-[3/4]"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster={panguipulli.imagenCiudad}
+              >
+                <source src={panguipulli.videoTour} type="video/mp4" />
+              </video>
             </div>
           </Reveal>
         </div>

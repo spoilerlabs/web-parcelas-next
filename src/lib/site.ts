@@ -16,6 +16,7 @@ export const nav = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Proyecto', href: '#proyecto' },
   { label: 'Panguipulli', href: '#panguipulli' },
+  { label: 'Galería', href: '#galeria' },
   { label: 'Atractivos', href: '#atractivos' },
   { label: 'Contacto', href: '#contacto' },
 ] as const;
@@ -31,44 +32,50 @@ export const hero = {
   ubicacionMapsLink: 'https://maps.app.goo.gl/hH7wdYzd7cZ6HStu6',
 } as const;
 
-export const caracteristicas = [
+// Características destacadas (con foto real), tal como en el sitio original.
+export const caracteristicasDestacadas = [
   {
-    titulo: '5.000 m² con rol propio',
+    titulo: 'Portón de acceso automatizado',
     descripcion:
-      'Cada parcela es individual, con su rol independiente. Terreno amplio para construir con total privacidad.',
-    icon: 'land',
+      'Acceso directo a la ruta principal asfaltada Panguipulli–Los Lagos, con portón automático en la entrada del proyecto.',
+    imagen: '/images/porton.jpg',
   },
   {
-    titulo: 'Electricidad incluida',
+    titulo: 'Punto de electricidad en cada lote',
     descripcion:
-      'Punto de electricidad en cada lote, sin necesidad de tramitar factibilidad. Listo para conectar.',
-    icon: 'bolt',
+      'Nada de factibilidad ni ponerse de acuerdo con los vecinos para postear. Te entregamos la parcela con la luz lista.',
+    imagen: '/images/proyecto-2.jpg',
   },
   {
-    titulo: 'Acceso asfaltado',
+    titulo: 'A 7 minutos de Panguipulli',
     descripcion:
-      'Conexión directa a la ruta Panguipulli–Los Lagos por camino asfaltado, con portón de acceso automatizado.',
-    icon: 'road',
-  },
-  {
-    titulo: 'A 7 minutos del centro',
-    descripcion:
-      'A solo 7 km del centro de Panguipulli: bancos, servicios, restaurantes y aeródromo a pocos minutos.',
-    icon: 'pin',
+      'A solo 7 km del centro: bancos, servicios, restaurantes y aeródromo a pocos minutos. Privacidad sin aislarte.',
+    imagen: '/images/proyecto-3.jpg',
   },
   {
     titulo: 'Bosque nativo y pradera',
     descripcion:
-      'Una combinación de bosque nativo y pradera abierta. Naturaleza viva en tu propio terreno.',
-    icon: 'tree',
+      'Una combinación de bosque nativo y pradera abierta. Naturaleza viva en tu propio terreno de 5.000 m².',
+    imagen: '/images/bosque.jpg',
+  },
+] as const;
+
+// Atributos rápidos (con icono), complementan a las destacadas.
+export const caracteristicasExtra = [
+  {
+    titulo: '5.000 m² con rol propio',
+    descripcion: 'Cada parcela es individual, con su rol independiente.',
+    icon: 'land',
   },
   {
     titulo: 'Privacidad garantizada',
-    descripcion:
-      'Las parcelas no son visibles desde el camino. Un proyecto cerrado de solo cuatro lotes.',
+    descripcion: 'Las parcelas no son visibles desde el camino. Solo cuatro lotes en total.',
     icon: 'shield',
   },
 ] as const;
+
+// Videos self-hosted servidos desde el VPS (nginx) detrás de Cloudflare (cacheados).
+export const VIDEOS_BASE = 'https://video.parcelas2.raddo.cl';
 
 export const panguipulli = {
   titulo: 'Panguipulli, corazón de Los Ríos',
@@ -77,15 +84,25 @@ export const panguipulli = {
     'A 1 hora 30 de Temuco (125 km) y a 105 km de Valdivia. Cuenta con bancos, oficinas estatales, restaurantes y aeródromo: todos los servicios que necesitas, en plena naturaleza.',
   ],
   imagenCiudad: '/images/calle-panguipulli.jpg',
+  videoTour: `${VIDEOS_BASE}/panguipulli.mp4`,
+  videoEntrada: `${VIDEOS_BASE}/entrada-camino.mp4`,
   videoYoutube: 'https://www.youtube.com/watch?v=KOOb6IP5s5Q',
 } as const;
+
+// Galería de fotos de Panguipulli y su entorno (sección 7 del original).
+export const galeria = [
+  { src: '/images/panguipulli.jpg', alt: 'Vista de Panguipulli' },
+  { src: '/images/volcan.jpg', alt: 'Volcán visible desde Panguipulli' },
+  { src: '/images/calle-panguipulli.jpg', alt: 'Calle Martínez de Rozas, Panguipulli' },
+  { src: '/images/rinihue.jpg', alt: 'Lago Riñihue' },
+] as const;
 
 export const atractivos = [
   {
     nombre: 'Río San Pedro',
     distancia: '14 km',
     descripcion: 'Pozones naturales de aguas cristalinas, ideales para un día de río.',
-    imagen: '/images/rinihue.jpg',
+    imagen: '/images/rio-san-pedro.jpg',
     mapsLink: 'https://maps.app.goo.gl/AkAqq1Kv8UqZx7E38',
   },
   {
@@ -106,7 +123,7 @@ export const atractivos = [
     nombre: 'Reserva Huilo Huilo',
     distancia: '68 km',
     descripcion: 'Portal Ciervos, saltos de agua y teleférico en una reserva biológica única.',
-    imagen: '/images/monje-4.jpg',
+    imagen: '/images/huilo-huilo.jpg',
     mapsLink: 'https://huilohuilo.com/',
   },
 ] as const;

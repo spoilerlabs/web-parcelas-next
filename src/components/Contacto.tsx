@@ -1,20 +1,23 @@
-import Image from 'next/image';
-import { contacto, hero } from '@/lib/site';
+import { contacto, hero, panguipulli } from '@/lib/site';
 import { WhatsappIcon, PhoneIcon, MailIcon } from './icons';
 import Reveal from './Reveal';
 
 export default function Contacto() {
   return (
     <section id="contacto" className="relative overflow-hidden py-24 text-crema sm:py-32">
-      {/* Imagen de la pradera como fondo */}
+      {/* Video de la entrada del camino como fondo (self-hosted en el VPS, cacheado por Cloudflare) */}
       <div className="absolute inset-0 -z-10">
-        <Image
-          src="/images/monje-4.jpg"
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
+        <video
+          className="h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/images/monje-4.jpg"
+        >
+          <source src={panguipulli.videoEntrada} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-br from-bosque-950/90 via-bosque-950/80 to-bosque-900/75" />
       </div>
 
