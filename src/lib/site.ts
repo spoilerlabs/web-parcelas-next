@@ -72,6 +72,11 @@ export const caracteristicasExtra = [
     descripcion: 'Las parcelas no son visibles desde el camino. Solo cuatro lotes en total.',
     icon: 'shield',
   },
+  {
+    titulo: 'Agua de pozo incluida',
+    descripcion: 'Cada parcela cuenta con su propio pozo y arranque de agua individual.',
+    icon: 'drop',
+  },
 ] as const;
 
 // Videos self-hosted servidos desde el VPS (nginx) detrás de Cloudflare (cacheados).
@@ -88,7 +93,7 @@ export const panguipulli = {
   videoTour: `${VIDEOS_BASE}/panguipulli.mp4`,
   videoTourPoster: '/images/poster-tour.jpg',
   videoEntrada: `${VIDEOS_BASE}/entrada-camino.mp4`,
-  videoEntradaPoster: '/images/calle-panguipulli.jpg',
+  videoEntradaPoster: '/images/poster-entrada.jpg',
   videoYoutube: 'https://www.youtube.com/watch?v=KOOb6IP5s5Q',
 } as const;
 

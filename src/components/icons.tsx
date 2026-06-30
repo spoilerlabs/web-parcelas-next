@@ -57,6 +57,15 @@ export function ShieldIcon({ className }: IconProps) {
   );
 }
 
+export function DropIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={`${base} ${className}`} strokeWidth={1.4} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3c3 3.8 6 7 6 10.5a6 6 0 0 1-12 0C6 10 9 6.8 12 3Z" />
+      <path d="M9.5 13.5a2.5 2.5 0 0 0 2.5 2.5" />
+    </svg>
+  );
+}
+
 export function WhatsappIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={`fill-current ${className}`}>
@@ -97,4 +106,5 @@ export const iconMap = {
   pin: PinIcon,
   tree: TreeIcon,
   shield: ShieldIcon,
+  drop: DropIcon,
 } as const;

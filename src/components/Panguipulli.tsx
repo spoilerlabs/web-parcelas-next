@@ -73,9 +73,6 @@ export default function Panguipulli() {
 
         {/* Segundo video: la entrada del camino (a demanda, como en el original) */}
         <Reveal className="mt-12">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-lago-300">
-            El camino de acceso
-          </p>
           <VideoPlayer
             src={panguipulli.videoEntrada}
             poster={panguipulli.videoEntradaPoster}
